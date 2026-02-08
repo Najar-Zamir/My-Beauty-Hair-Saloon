@@ -45,7 +45,7 @@
             if (view.type === 'category') {
                 const service = businessData.services.find(s => s.id === view.id);
                 return (
-                    <div className="min-h-screen bg-slate-950">
+                    <div className="min-h-screen bg-slate-900">
                         <button onClick={() => { setView({type: 'home'}); window.scrollTo(0,0); }} className="fixed top-6 left-6 z-50 p-3 bg-slate-900 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-2xl">
                            <i data-lucide="arrow-left"></i>
                         </button>
