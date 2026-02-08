@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Beauty Hair Salon  | Official Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; }
+        :root { --theme-color: #3b82f6; }
+        .animate-glow { animation: pulse-glow 3s infinite ease-in-out; }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.05); } }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const businessData = JSON.parse("{\"companyName\":\"My Beauty Hair Salon \",\"companyLogo\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/unnamed.jpg\",\"providerName\":\"Bilal Ahmad\",\"providerPhoto\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG-20260208-WA0010.jpg\",\"socialLinks\":[{\"id\":\"1\",\"platform\":\"Instagram\",\"url\":\"https://www.instagram.com/bilal_ah_x?igsh=NmFrdGkzd3M4bGQ=\"},{\"id\":\"2\",\"platform\":\"WhatsApp\",\"url\":\"https://wa.me/+91 96224 86504\"}],\"services\":[{\"id\":\"s1\",\"name\":\"Haircut \",\"description\":\"Get a fresh new look! Expert haircuts tailored to your style.\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153051.jpg\",\"price\":\"Rs. 50\",\"subServices\":[{\"id\":\"ss1\",\"name\":\"Simple Haircut\",\"description\":\"\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153051.jpg\",\"price\":\"Rs 50\"},{\"id\":\"ss2\",\"name\":\"Zero Step \",\"description\":\"\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(6).jpeg\",\"price\":\"Rs 70\"}]},{\"id\":\"1770545946098\",\"name\":\"Shave\",\"description\":\"Start fresh with a smooth shave!\",\"price\":\"Rs 40\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(5).jpeg\",\"subServices\":[{\"id\":\"1770546095722\",\"name\":\"Simple Shave\",\"description\":\"\",\"price\":\"Rs 40\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(2).jpeg\"},{\"id\":\"1770546140159\",\"name\":\"Fade Shave\",\"description\":\"\",\"price\":\"Rs 50\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(5).jpeg\"}]},{\"id\":\"1770546212957\",\"name\":\"Combo : Haircut & Shave\",\"description\":\"Gry a fresh new look with our Haircut & Shave Combo! Get a stylish haircut and a smooth, comfortable shave that'll leave you feeling refreshed and revitalized.\",\"price\":\"100\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(4).jpeg\",\"subServices\":[{\"id\":\"1770546394322\",\"name\":\"Simple Hairstyle+ Shave\",\"description\":\"\",\"price\":\"Rs 100\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(3).jpeg\"},{\"id\":\"1770546448780\",\"name\":\"Step Haircut + Fade Shave\",\"description\":\"\",\"price\":\"Rs 120\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(4).jpeg\"}]},{\"id\":\"1770546521004\",\"name\":\"Straightner \",\"description\":\"Get sleek, smooth hair with our expert hair straightening services! Our skilled stylists use top-notch products to tame frizz and give you the straight, shiny look you want.\",\"price\":\"Rs 600\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(7).jpeg\",\"subServices\":[{\"id\":\"1770546793490\",\"name\":\"Basic Straightner \",\"description\":\"\",\"price\":\"Rs 600\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153116.jpg\"},{\"id\":\"1770546866472\",\"name\":\"Smoothing \",\"description\":\"\",\"price\":\"Rs 800\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images.jpeg\"},{\"id\":\"1770546907823\",\"name\":\"Karatein \",\"description\":\"\",\"price\":\"Rs 1200\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153104.jpg\"}]},{\"id\":\"1770546521462\",\"name\":\"Massage \",\"description\":\"Unwind and rejuvenate with our expert massage services! Our skilled therapists will melt away your stress and leave you feeling relaxed and refreshed.\",\"price\":\"Rs 150\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153042.jpg\",\"subServices\":[{\"id\":\"1770547075929\",\"name\":\"Simple Massage \",\"description\":\"\",\"price\":\"Rs 150\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153020.jpg\"},{\"id\":\"1770547123078\",\"name\":\"Massaga Kit \",\"description\":\"\",\"price\":\"Rs 800-1000\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153031.jpg\"}]},{\"id\":\"1770546522294\",\"name\":\"Waxing \",\"description\":\"Smooth operator! Get silky-smooth skin with our waxing services.\",\"price\":\"150-200\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(15).jpeg\",\"subServices\":[]},{\"id\":\"1770547342956\",\"name\":\"SPECIAL (for Grooms)\",\"description\":\"Groom like a king with our special Groom Package! Get a refreshing haircut, soothing massage, and more, all tailored to make you look and feel your best for your big day.\",\"price\":\"200-2000\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_162052.jpg\",\"subServices\":[{\"id\":\"1770547756274\",\"name\":\"Special Massage \",\"description\":\"Get a refreshing soothing massage, and more, all tailored to make you look and feel your best for your big day.\",\"price\":\"Rs 1500-2000\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153006.jpg\"},{\"id\":\"1770547977576\",\"name\":\"Haircut + Shave\",\"description\":\" Get a refreshing haircut to make you look and feel your best for your big day. \",\"price\":\"Rs 200\",\"image\":\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(3).jpeg\"}]}],\"gallery\":[\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images.jpeg\",\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(6).jpeg\",\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(5).jpeg\",\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/images%20(3).jpeg\",\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153116.jpg\",\"https://raw.githubusercontent.com/Najar-Zamir/my-images/main/IMG_20260208_153020.jpg\"],\"contact\":{\"phone\":\"+91+91 96224 86504\",\"email\":\"mybeautyhairsaloon@gmail.com\",\"address\":\"Hushroo, Chadoora Budgam - 191113\",\"mapUrl\":\"https://maps.app.goo.gl/s1FQgzt5ZfBjop2N6\"},\"themeColor\":\"#3b82f6\"}");
+        
+        // Simplified rendering logic for the exported site
+        const App = () => {
+            const [view, setView] = React.useState({ type: 'home' });
+            
+            React.useEffect(() => {
+                const hex = businessData.themeColor.replace('#', '');
+                const r = parseInt(hex.substring(0, 2), 16);
+                const g = parseInt(hex.substring(2, 4), 16);
+                const b = parseInt(hex.substring(4, 6), 16);
+                document.documentElement.style.setProperty('--theme-rgb', `${r}, ${g}, ${b}`);
+                lucide.createIcons();
+            }, []);
+
+            if (view.type === 'category') {
+                const service = businessData.services.find(s => s.id === view.id);
+                return (
+                    <div className="min-h-screen">
+                        <button onClick={() => setView({type: 'home'})} className="fixed top-6 left-6 z-50 p-3 bg-slate-900 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-2xl">
+                           <i data-lucide="arrow-left"></i>
+                        </button>
+                        <div className="relative h-[50vh] w-full">
+                            <img src={service.image} className="w-full h-full object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                            <div className="absolute bottom-12 left-0 right-0 max-w-7xl mx-auto px-6">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(var(--theme-rgb),0.2)] text-[rgba(var(--theme-rgb),1)] text-sm font-bold mb-4">{service.price || 'Premium'}</span>
+                                <h1 className="text-5xl font-bold mb-4">{service.name}</h1>
+                                <p className="text-slate-300 max-w-2xl">{service.description}</p>
+                            </div>
+                        </div>
+                        <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8">
+                            {service.subServices.map(sub => (
+                                <div className="flex flex-col sm:flex-row gap-6 p-6 bg-slate-900/40 border border-white/5 rounded-[32px]">
+                                    <img src={sub.image} className="w-40 h-40 rounded-2xl object-cover" />
+                                    <div className="flex-1 flex flex-col justify-center">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <h3 className="text-xl font-bold">{sub.name}</h3>
+                                            <span className="text-[rgba(var(--theme-rgb),1)] font-bold">{sub.price}</span>
+                                        </div>
+                                        <p className="text-slate-400 text-sm">{sub.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="min-h-screen pb-20">
+                    <header className="min-h-screen flex items-center justify-center relative px-6">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[rgba(var(--theme-rgb),0.1)] rounded-full blur-[100px] animate-glow" />
+                        </div>
+                        <nav className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center max-w-7xl mx-auto w-full z-10">
+                            <div className="flex items-center gap-4">
+                                <img src={businessData.companyLogo} className="w-10 h-10 rounded-lg object-cover" />
+                                <span className="text-xl font-bold">{businessData.companyName}</span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-sm text-slate-400 font-medium">
+                                <a href="#services" className="hover:text-white">Services</a>
+                                <a href="#about" className="hover:text-white">About</a>
+                                <a href="#gallery" className="hover:text-white">Gallery</a>
+                                <a href="#contact" className="hover:text-white">Contact</a>
+                            </div>
+                        </nav>
+                        <div className="text-center space-y-8 z-10">
+                            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter">Transform Your Presence</h1>
+                            <p className="text-xl text-slate-400 max-w-2xl mx-auto">Welcome to {businessData.companyName}. Expertise by {businessData.providerName}.</p>
+                            <a href="#services" className="inline-block px-10 py-4 bg-[rgba(var(--theme-rgb),1)] rounded-2xl font-bold">Explore Services</a>
+                        </div>
+                    </header>
+                    <section id="services" className="max-w-7xl mx-auto px-6 py-20 space-y-12">
+                        <h2 className="text-4xl font-bold text-center">Our Services</h2>
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {businessData.services.map(s => (
+                                <div className="group relative h-[420px] rounded-[40px] overflow-hidden border border-white/5 p-8 flex flex-col justify-end">
+                                    <img src={s.image} className="absolute inset-0 w-full h-full object-cover transition group-hover:scale-110" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                                    <div className="relative z-10 space-y-4">
+                                        <h3 className="text-2xl font-bold">{s.name}</h3>
+                                        <button onClick={() => setView({type: 'category', id: s.id})} className="w-full py-3 bg-white/10 backdrop-blur-md rounded-xl font-bold">View Options</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                    <section id="about" className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row gap-16 items-center">
+                        <img src={businessData.providerPhoto} className="w-full md:w-1/2 rounded-3xl h-[600px] object-cover" />
+                        <div className="space-y-6">
+                            <h2 className="text-4xl font-bold">Meet {businessData.providerName}</h2>
+                            <p className="text-slate-400 leading-loose">Dedicated professional excellence at {businessData.companyName}.</p>
+                        </div>
+                    </section>
+                    <section id="gallery" className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {businessData.gallery.map(img => <img src={img} className="aspect-square w-full object-cover rounded-2xl" />)}
+                    </section>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
