@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Beauty Hair Salon | Official Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; scroll-behavior: smooth; overflow-x: hidden; }
+        :root { --theme-color: #0000ff; }
+        .animate-glow { animation: pulse-glow 3s infinite ease-in-out; }
+        @keyframes pulse-glow { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.05); } }
+        .selection-theme::selection { background-color: rgba(var(--theme-rgb), 0.3); }
+    </style>
+</head>
+<body class="selection-theme">
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const businessData = JSON.parse(decodeURIComponent(escape(atob("eyJjb21wYW55TmFtZSI6Ik15IEJlYXV0eSBIYWlyIFNhbG9uIiwiY29tcGFueUxvZ28iOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vdW5uYW1lZC5qcGciLCJwcm92aWRlck5hbWUiOiJCaWxhbCBBaG1hZCIsInByb3ZpZGVyUGhvdG8iOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HLTIwMjYwMjA4LVdBMDAxMC5qcGciLCJzb2NpYWxMaW5rcyI6W3siaWQiOiIxIiwicGxhdGZvcm0iOiJJbnN0YWdyYW0iLCJ1cmwiOiJodHRwczovL3d3dy5pbnN0YWdyYW0uY29tL2JpbGFsX2FoX3g/aWdzaD1ObUZyZEdremQzTTRiR1E9In0seyJpZCI6IjIiLCJwbGF0Zm9ybSI6IldoYXRzQXBwIiwidXJsIjoiaHR0cHM6Ly93YS5tZS8rOTEgOTYyMjQgODY1MDQifV0sInNlcnZpY2VzIjpbeyJpZCI6InMxIiwibmFtZSI6IiBIYWlyY3V0IiwiZGVzY3JpcHRpb24iOiJHZXQgYSBmcmVzaCBuZXcgbG9vayEgRXhwZXJ0IGhhaXJjdXRzIHRhaWxvcmVkIHRvIHlvdXIgc3R5bGUuIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzA1MS5qcGciLCJwcmljZSI6IlN0YXJ0aW5nIGF0IFJzIDUwIiwic3ViU2VydmljZXMiOlt7ImlkIjoic3MxIiwibmFtZSI6IlNpbXBsZSBIYWlyY3V0IiwiZGVzY3JpcHRpb24iOiIiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9JTUdfMjAyNjAyMDhfMTUzMDUxLmpwZyIsInByaWNlIjoiUnMgNTAifSx7ImlkIjoic3MyIiwibmFtZSI6IlN0ZXAgSGFpcmN1dCIsImRlc2NyaXB0aW9uIjoiIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDYpLmpwZWciLCJwcmljZSI6IlJzIDcwIn1dfSx7ImlkIjoiMTc3MDU1MjI0MDcyOSIsIm5hbWUiOiIgU2hhdmUiLCJkZXNjcmlwdGlvbiI6IlN0YXJ0IGZyZXNoIHdpdGggYSBzbW9vdGggc2hhdmUhIiwicHJpY2UiOiJTdGFydGluZyBhdCBScyA0MCIsImltYWdlIjoiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05hamFyLVphbWlyL215LWltYWdlcy9tYWluL2ltYWdlcyUyMCgyKS5qcGVnIiwic3ViU2VydmljZXMiOlt7ImlkIjoiMTc3MDU1MjI5Nzc0NSIsIm5hbWUiOiJTaW1wbGUgU2hhdmUiLCJkZXNjcmlwdGlvbiI6IiIsInByaWNlIjoiUnMgNDAiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9pbWFnZXMlMjAoMikuanBlZyJ9LHsiaWQiOiIxNzcwNTUyMzAxODg4IiwibmFtZSI6IkZhZGUgU2hhdmUiLCJkZXNjcmlwdGlvbiI6IiIsInByaWNlIjoiUnMgNTAiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9pbWFnZXMlMjAoNSkuanBlZyJ9XX0seyJpZCI6IjE3NzA1NTIzODM5MjgiLCJuYW1lIjoiIENvbWJvIDogSGFpcmN1dCAmIFNoYXZlIiwiZGVzY3JpcHRpb24iOiJHcnkgYSBmcmVzaCBuZXcgbG9vayB3aXRoIG91ciBIYWlyY3V0ICYgU2hhdmUgQ29tYm8hIEdldCBhIHN0eWxpc2ggaGFpcmN1dCBhbmQgYSBzbW9vdGgsIGNvbWZvcnRhYmxlIHNoYXZlIHRoYXQnbGwgbGVhdmUgeW91IGZlZWxpbmcgcmVmcmVzaGVkIGFuZCByZXZpdGFsaXplZCIsInByaWNlIjoiU3RhcnRpbmcgYXQgUnMgMTAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDQpLmpwZWciLCJzdWJTZXJ2aWNlcyI6W3siaWQiOiIxNzcwNTUyNDQ1OTM1IiwibmFtZSI6IlNpbXBsZSBIYWlyY3V0ICYgU2hhdmUiLCJkZXNjcmlwdGlvbiI6IiIsInByaWNlIjoiUnMgMTAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDMpLmpwZWcifSx7ImlkIjoiMTc3MDU1MjQ3MjkyNyIsIm5hbWUiOiJTdGVwIEhhaXJjdXQgJiBGYWRlIFNoYXZlIiwiZGVzY3JpcHRpb24iOiIiLCJwcmljZSI6IlJzIDEyMCIsImltYWdlIjoiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05hamFyLVphbWlyL215LWltYWdlcy9tYWluL2ltYWdlcyUyMCg0KS5qcGVnIn1dfSx7ImlkIjoiMTc3MDU1MjUzNzI0NiIsIm5hbWUiOiJTdHJhaWdodG5lciIsImRlc2NyaXB0aW9uIjoiR2V0IHNsZWVrLCBzbW9vdGggaGFpciB3aXRoIG91ciBleHBlcnQgaGFpciBzdHJhaWdodGVuaW5nIHNlcnZpY2VzISBPdXIgc2tpbGxlZCBzdHlsaXN0cyB1c2UgdG9wLW5vdGNoIHByb2R1Y3RzIHRvIHRhbWUgZnJpenogYW5kIGdpdmUgeW91IHRoZSBzdHJhaWdodCwgc2hpbnkgbG9vayB5b3Ugd2FudC4iLCJwcmljZSI6IlN0YXJ0aW5nIGF0IFJzIDYwMCIsImltYWdlIjoiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05hamFyLVphbWlyL215LWltYWdlcy9tYWluL2ltYWdlcyUyMCg3KS5qcGVnIiwic3ViU2VydmljZXMiOlt7ImlkIjoiMTc3MDU1MjU3ODA3MSIsIm5hbWUiOiJCYXNpYyBTdHJhaWdodG5lciIsImRlc2NyaXB0aW9uIjoiIiwicHJpY2UiOiJScyA2MDAiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9JTUdfMjAyNjAyMDhfMTUzMTE2LmpwZyJ9LHsiaWQiOiIxNzcwNTUyNTc4NTAyIiwibmFtZSI6IlNtb290aGluZyIsImRlc2NyaXB0aW9uIjoiIiwicHJpY2UiOiJScyA4MDAiLCJpbWFnZSI6Imh0dHBzOi8vcGljc3VtLnBob3Rvcy80MDAvMzAwP3JhbmRvbT0wLjg1OTczNDQ3OTM4ODAxNzgifSx7ImlkIjoiMTc3MDU1MjU3ODc5OSIsIm5hbWUiOiJLYXJhdGVpbiIsImRlc2NyaXB0aW9uIjoiIiwicHJpY2UiOiIxMjAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzEwNC5qcGcifV19LHsiaWQiOiIxNzcwNTUyNzQ2NzQ5IiwibmFtZSI6Ik1hc3NhZ2UiLCJkZXNjcmlwdGlvbiI6IlVud2luZCBhbmQgcmVqdXZlbmF0ZSB3aXRoIG91ciBleHBlcnQgbWFzc2FnZSBzZXJ2aWNlcyEgT3VyIHNraWxsZWQgdGhlcmFwaXN0cyB3aWxsIG1lbHQgYXdheSB5b3VyIHN0cmVzcyBhbmQgbGVhdmUgeW91IGZlZWxpbmcgcmVsYXhlZCBhbmQgcmVmcmVzaGVkLiIsInByaWNlIjoiU3RhcnRpbmcgUnMgMTUwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzAyMC5qcGciLCJzdWJTZXJ2aWNlcyI6W3siaWQiOiIxNzcwNTUyODIyMzAxIiwibmFtZSI6IlNpbXBsZSBNYXNzYWdlIiwiZGVzY3JpcHRpb24iOiIiLCJwcmljZSI6IlJzIDE1MCIsImltYWdlIjoiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05hamFyLVphbWlyL215LWltYWdlcy9tYWluL0lNR18yMDI2MDIwOF8xNTMwMjAuanBnIn0seyJpZCI6IjE3NzA1NTI4MjI5OTciLCJuYW1lIjoiTWFzc2FnYSBLaXQiLCJkZXNjcmlwdGlvbiI6IkluY2x1ZGVzIG9pbHMgYW5kIGNyZWFtcyIsInByaWNlIjoiUnMgODAwLTEwMDAiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9JTUdfMjAyNjAyMDhfMTUzMDMxLmpwZyJ9XX0seyJpZCI6IjE3NzA1NTI5NDYzNzIiLCJuYW1lIjoiV2F4aW5nIiwiZGVzY3JpcHRpb24iOiJTbW9vdGggb3BlcmF0b3IhIEdldCBzaWxreS1zbW9vdGggc2tpbiB3aXRoIG91ciB3YXhpbmcgc2VydmljZXMuIiwicHJpY2UiOiJScyAxNTAtMjAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDE1KS5qcGVnIiwic3ViU2VydmljZXMiOltdfSx7ImlkIjoiMTc3MDU1Mjk0NjY4NCIsIm5hbWUiOiJTUEVDSUFMIChmb3IgR3Jvb21zKSIsImRlc2NyaXB0aW9uIjoiR3Jvb20gbGlrZSBhIGtpbmcgd2l0aCBvdXIgc3BlY2lhbCBHcm9vbSBQYWNrYWdlISBHZXQgYSByZWZyZXNoaW5nIGhhaXJjdXQsIHNvb3RoaW5nIG1hc3NhZ2UsIGFuZCBtb3JlLCBhbGwgdGFpbG9yZWQgdG8gbWFrZSB5b3UgbG9vayBhbmQgZmVlbCB5b3VyIGJlc3QgZm9yIHlvdXIgYmlnIGRheSIsInByaWNlIjoiUnMgMjAwLTIwMDAiLCJpbWFnZSI6Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9OYWphci1aYW1pci9teS1pbWFnZXMvbWFpbi9JTUdfMjAyNjAyMDhfMTYyMDUyLmpwZyIsInN1YlNlcnZpY2VzIjpbeyJpZCI6IjE3NzA1NTMxNTMyOTkiLCJuYW1lIjoiU3BlY2lhbCBNYXNzYWdlIiwiZGVzY3JpcHRpb24iOiJldCBhIHJlZnJlc2hpbmcgc29vdGhpbmcgbWFzc2FnZSwgYW5kIG1vcmUsIGFsbCB0YWlsb3JlZCB0byBtYWtlIHlvdSBsb29rIGFuZCBmZWVsIHlvdXIgYmVzdCBmb3IgeW91ciBiaWcgZGF5LiIsInByaWNlIjoiUnMgMTUwMC0yMDAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzAwNi5qcGcifSx7ImlkIjoiMTc3MDU1MzE1MzU4NyIsIm5hbWUiOiJIYWlyY3V0ICsgU2hhdmUiLCJkZXNjcmlwdGlvbiI6IkdldCBhIHJlZnJlc2hpbmcgaGFpcmN1dCB0byBtYWtlIHlvdSBsb29rIGFuZCBmZWVsIHlvdXIgYmVzdCBmb3IgeW91ciBiaWcgZGF5LiIsInByaWNlIjoiUnMgMjAwIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDMpLmpwZWcifV19XSwiZ2FsbGVyeSI6WyJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzAwNi5qcGciLCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vSU1HXzIwMjYwMjA4XzE1MzA1MS5qcGciLCIgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05hamFyLVphbWlyL215LWltYWdlcy9tYWluL2ltYWdlcyUyMCgxNSkuanBlZyIsIiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDIpLmpwZWciLCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDQpLmpwZWciLCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTmFqYXItWmFtaXIvbXktaW1hZ2VzL21haW4vaW1hZ2VzJTIwKDYpLmpwZWciXSwiY29udGFjdCI6eyJwaG9uZSI6Iis5MSA5NjIyNCA4NjUwNCIsImVtYWlsIjoiYXJ0Y3JlYXRpb24xMTA0MjAwMkBnbWFpbC5jb20iLCJhZGRyZXNzIjoiSHVzaHJvbyBDaGFkb29yYSBCdWRnYW0gLSAxOTExMTMiLCJtYXBVcmwiOiJodHRwczovL21hcHMuYXBwLmdvby5nbC9TeGFLMUs3RWpSTTZxb29yNSJ9LCJ0aGVtZUNvbG9yIjoiI2EyZjczYiJ9"))));
+        
+        const App = () => {
+            const [view, setView] = React.useState({ type: 'home' });
+            
+            React.useEffect(() => {
+                const hex = businessData.themeColor.replace('#', '');
+                const r = parseInt(hex.substring(0, 2), 16) || 59;
+                const g = parseInt(hex.substring(2, 4), 16) || 130;
+                const b = parseInt(hex.substring(4, 6), 16) || 246;
+                document.documentElement.style.setProperty('--theme-rgb', `${r}, ${g}, ${b}`);
+                setTimeout(() => lucide.createIcons(), 100);
+            }, [view]);
+
+            const SocialIconMapping = {
+              WhatsApp: 'message-circle', Instagram: 'instagram', Snapchat: 'ghost', Facebook: 'facebook',
+              Twitter: 'twitter', LinkedIn: 'linkedin', YouTube: 'youtube', TikTok: 'music-2', Website: 'globe'
+            };
+
+            if (view.type === 'category') {
+                const service = businessData.services.find(s => s.id === view.id);
+                return (
+                    <div className="min-h-screen bg-slate-900">
+                        <button onClick={() => { setView({type: 'home'}); window.scrollTo(0,0); }} className="fixed top-6 left-6 z-50 p-3 bg-slate-900 border border-white/10 rounded-full hover:bg-white/10 transition-all shadow-2xl">
+                           <i data-lucide="arrow-left"></i>
+                        </button>
+                        <div className="relative h-[45vh] w-full">
+                            <img src={service.image} className="w-full h-full object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                            <div className="absolute bottom-12 left-0 right-0 max-w-7xl mx-auto px-6">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(var(--theme-rgb),0.2)] text-[rgba(var(--theme-rgb),1)] text-xs font-bold mb-4 uppercase tracking-widest border border-[rgba(var(--theme-rgb),0.3)]">{service.price || 'Premium'}</span>
+                                <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">{service.name}</h1>
+                                <p className="text-slate-300 max-w-2xl text-lg font-light leading-relaxed">{service.description}</p>
+                            </div>
+                        </div>
+                        <div className="max-w-7xl mx-auto px-6 py-20">
+                            <div className="flex items-center gap-4 mb-12">
+                                <h2 className="text-xl font-bold uppercase tracking-[0.3em] text-slate-500">Detailed Options</h2>
+                                <div className="flex-1 h-px bg-white/10" />
+                            </div>
+                            <div className="grid lg:grid-cols-2 gap-8">
+                                {service.subServices.map(sub => (
+                                    <div key={sub.id} className="group flex flex-col sm:flex-row gap-6 p-5 bg-slate-900/40 border border-white/5 rounded-[40px] hover:border-[rgba(var(--theme-rgb),0.4)] transition-all">
+                                        <img src={sub.image} className="w-full sm:w-32 h-32 rounded-3xl object-cover shadow-lg border border-white/5" />
+                                        <div className="flex-1 flex flex-col justify-center space-y-3">
+                                            <div className="flex justify-between items-center">
+                                                <h3 className="text-xl font-bold group-hover:text-[rgba(var(--theme-rgb),1)] transition-colors">{sub.name}</h3>
+                                                {sub.price && <span className="px-3 py-1 bg-white/5 rounded-xl text-[rgba(var(--theme-rgb),1)] font-bold text-sm border border-white/5">{sub.price}</span>}
+                                            </div>
+                                            <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">{sub.description}</p>
+                                            <button className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[rgba(var(--theme-rgb),1)] group-hover:text-white transition-all">
+                                                Select Service <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <footer className="max-w-7xl mx-auto px-6 py-12 border-t border-white/5 text-center text-slate-600 text-[10px] font-bold uppercase tracking-[0.5em]">
+                            <p>&copy; {new Date().getFullYear()} {businessData.companyName}</p>
+                        </footer>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="min-h-screen bg-slate-900">
+                    <header className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
+                        {/* Faded Background Image */}
+                        <div className="absolute inset-0 z-0">
+                          <img src={businessData.providerPhoto} class="w-full h-full object-cover opacity-65 blur-sm scale-105" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950" />
+                        </div>
+
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
+                            <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[rgba(var(--theme-rgb),0.2)] rounded-full blur-[140px] animate-glow" />
+                        </div>
+                        <nav className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center max-w-7xl mx-auto w-full z-20">
+                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+                                <img src={businessData.companyLogo} className="w-10 h-10 rounded-xl object-cover shadow-[0_0_20px_rgba(var(--theme-rgb),0.4)]" />
+                                <span className="text-lg font-bold tracking-tight">{businessData.companyName}</span>
+                            </div>
+                            <div className="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                                <a href="#services" className="hover:text-white transition-colors">Services</a>
+                                <a href="#about" className="hover:text-white transition-colors">About</a>
+                                <a href="#gallery" className="hover:text-white transition-colors">Gallery</a>
+                                <a href="#contact" className="px-5 py-2 rounded-full border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all text-white">Contact</a>
+                            </div>
+                        </nav>
+                        <div className="text-center space-y-10 z-10 max-w-4xl relative">
+                            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none">Transform Your <span className="text-transparent bg-clip-text bg-clip-text bg-gradient-to-r from-white to-slate-400">Look</span></h1>
+                            <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">Welcome to <span className="text-white font-medium">{businessData.companyName}</span>. Elite craftsmanship redefined by {businessData.providerName}.</p>
+                            
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-4">
+                                <a href="#services" className="px-12 py-5 bg-[#0000ff] text-white font-bold rounded-2xl shadow-[0_15px_45px_rgba(var(--theme-rgb),0.3)] hover:translate-y-[-4px] transition-all">Explore Services</a>
+                                <div className="flex items-center gap-4">
+                                    <a href={`tel:${businessData.contact.phone}`} className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-slate-400 hover:text-white" title="Call Us">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </a>
+                                    <a href={`mailto:${businessData.contact.email}`} className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-slate-400 hover:text-white" title="Email Us">
+                                        <i data-lucide="mail" class="w-5 h-5"></i>
+                                    </a>
+                                    {businessData.socialLinks.map(link => (
+                                        <a key={link.id} href={link.url} target="_blank" className="p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-slate-400 hover:text-white">
+                                            <i data-lucide={SocialIconMapping[link.platform] || 'globe'} class="w-5 h-5"></i>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20 z-10">
+                            <div className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent" />
+                        </div>
+                    </header>
+
+                    <section id="services" className="max-w-7xl mx-auto px-6 py-32 space-y-20 scroll-mt-24">
+                        <div className="text-center space-y-4">
+                            <h2 className="text-xl font-bold tracking-[0.4em] uppercase text-slate-500">Services</h2>
+                            <div className="w-12 h-1 bg-[rgba(var(--theme-rgb),1)] mx-auto rounded-full" />
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-10">
+                            {businessData.services.map(s => (
+                                <div key={s.id} className="group relative h-[380px] rounded-[64px] overflow-hidden border border-white/5 hover:border-[rgba(var(--theme-rgb),0.4)] transition-all duration-700 shadow-2xl flex flex-col justify-end p-8">
+                                    <img src={s.image} className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-110" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                                    <div className="relative z-10 space-y-5">
+                                        <div className="flex justify-between items-center">
+                                            <h3 className="text-3xl font-bold tracking-tight">{s.name}</h3>
+                                            {s.price && <span className="text-xs font-bold text-[rgba(var(--theme-rgb),1)] px-3 py-1.5 bg-black/50 backdrop-blur-md rounded-xl border border-white/10">{s.price}</span>}
+                                        </div>
+                                        <p className="text-slate-400 text-xs line-clamp-2 leading-relaxed font-light">{s.description}</p>
+                                        <button onClick={() => { setView({type: 'category', id: s.id}); window.scrollTo(0,0); }} className="w-full py-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl font-bold hover:bg-[#0000ff] transition-all">Explore</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section id="about" className="relative py-40 overflow-hidden scroll-mt-24">
+                        <div className="absolute inset-0 bg-[rgba(var(--theme-rgb),0.03)] -skew-y-2 transform" />
+                        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-20 relative">
+                            <img src={businessData.providerPhoto} className="w-full md:w-1/2 rounded-[64px] h-[600px] object-cover shadow-2xl border border-white/10" />
+                            <div className="space-y-10">
+                                <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight">Crafting Excellence Since Day One</h2>
+                                <h3 className="text-sm font-bold text-[rgba(var(--theme-rgb),1)] tracking-[0.4em] uppercase">{businessData.providerName}</h3>
+                                <p className="text-xl text-slate-400 font-light leading-relaxed italic">"I don't just provide services; I craft legacies of style and professional integrity."</p>
+                                <div className="grid grid-cols-2 gap-16 pt-8">
+                                    <div>
+                                        <div className="text-5xl font-bold tracking-tighter">10+</div>
+                                        <div className="text-[10px] text-slate-500 uppercase font-bold tracking-[0.4em]">Years Mastery</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-5xl font-bold tracking-tighter">3k+</div>
+                                        <div className="text-[10px] text-slate-500 uppercase font-bold tracking-[0.4em]">Success Stories</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="gallery" className="max-w-7xl mx-auto px-6 py-32 space-y-16 scroll-mt-24">
+                        <div className="text-center space-y-4">
+                            <h2 className="text-xl font-bold tracking-[0.3em] uppercase text-slate-500">Visual Portfolio</h2>
+                            <p className="text-slate-400 text-sm font-light">A curated look into our recent high-end work.</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            {businessData.gallery.map((img, idx) => (
+                                <div key={idx} className="aspect-square rounded-[40px] overflow-hidden group relative shadow-2xl border border-white/10">
+                                    <img src={img} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section id="contact" className="max-w-7xl mx-auto px-6 py-20 md:py-40 scroll-mt-24">
+                        <div className="bg-slate-900/80 border border-white/5 rounded-[40px] md:rounded-[80px] p-8 md:p-16 lg:p-24 flex flex-col lg:flex-row gap-12 lg:gap-20 shadow-2xl backdrop-blur-3xl">
+                            <div className="w-full lg:w-1/2 space-y-10 lg:space-y-16">
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Get In Touch</h2>
+                                <div className="space-y-10 md:space-y-12">
+                                    <div className="flex items-center gap-8 group">
+                                        <div className="p-5 bg-white/5 rounded-3xl border border-white/10 text-[rgba(var(--theme-rgb),1)]">
+                                            <i data-lucide="phone"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-[0.3em]">Inquiries</div>
+                                            <div className="text-lg md:text-xl font-bold">{businessData.contact.phone}</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-8 group">
+                                        <div className="p-5 bg-white/5 rounded-3xl border border-white/10 text-[rgba(var(--theme-rgb),1)]">
+                                            <i data-lucide="mail"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-[0.3em]">Email Support</div>
+                                            <div className="text-lg md:text-xl font-bold break-all">{businessData.contact.email}</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-8 group">
+                                        <div className="p-5 bg-white/5 rounded-3xl border border-white/10 text-[rgba(var(--theme-rgb),1)]">
+                                            <i data-lucide="map-pin"></i>
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-[0.3em]">Our Location</div>
+                                            <div className="text-lg md:text-xl font-bold leading-tight">{businessData.contact.address}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full lg:w-1/2 h-[300px] md:h-[450px] lg:h-[550px] rounded-[32px] md:rounded-[64px] overflow-hidden shadow-2xl border border-white/10">
+                                <iframe src={businessData.contact.mapUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" />
+                            </div>
+                        </div>
+                    </section> 
+                    
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script> <footer class="bg-slate-950/50 border-t border-slate-800 py-6"><div class="container mx-auto px-8 md:px-16 text-center text-sm text-slate-500"><p>Designed by <a href="https://wa.me/918492968959?text=Hello%20Najar%20Zamir" style="text-decoration: underline; font-size: 1.1em;"> Najar Zamir🔗</p></div></footer>
+</body>
+</html>
